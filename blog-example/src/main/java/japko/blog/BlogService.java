@@ -3,6 +3,7 @@ package japko.blog;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
+import japko.blog.resources.HelloResource;
 
 public class BlogService extends Service<BlogConfiguration> {
 
@@ -17,7 +18,7 @@ public class BlogService extends Service<BlogConfiguration> {
 
     @Override
     public void run(BlogConfiguration configuration, Environment environment) {
-        // TODO: implement service, add resources, healthchecks etc...
+        environment.addResource(new HelloResource());
     }
 
 }
